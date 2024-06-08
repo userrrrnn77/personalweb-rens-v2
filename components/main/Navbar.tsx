@@ -4,22 +4,22 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2a0e61]/50 bg-[#03001417] backdrop-blur-md z-50 px-10">
-      <div className="w-full h-full flex flex-row items-center justify-between m-auto px-[10px]">
-        <a href="#about-me" className="h-auto w-auto flex flex-row items-center">
+    <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2a0e61]/50 bg-[#03001417] backdrop-blur-md z-50 px-5 md:px-10">
+      <div className="w-full h-full flex items-center justify-between m-auto px-[10px]">
+        <a href="#about-me" className="flex items-center">
           <Image
             src="/LogoNavRens.png"
             alt="navlogo"
-            width={50}
-            height={50}
+            width={40}
+            height={40}
             className="cursor-pointer hover:animate-slowspin"
           />
-          <span className="font-bold ml-[10px] hidden md:block text-gray-300">
+          <span className="font-bold ml-2 hidden sm:block text-gray-300 text-sm md:text-base">
             Rens Dev
           </span>
         </a>
-        <div className="w-[500px] h-full flex flex-row items-center justify-between md:mr-20">
-          <div className="flex items-center justify-between w-full h-auto border border-[#7042f861] bg-[#0300145e] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200">
+        <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-4 border border-[#7042f861] bg-[#0300145e] px-4 py-2 rounded-full text-gray-200 text-xs md:text-sm">
             <a href="#about-me" className="cursor-pointer">
               About Me
             </a>
@@ -30,16 +30,18 @@ const Navbar = () => {
               Projects
             </a>
           </div>
-        </div>
-        <div className="flex flex-row gap-5">
+          <div className="flex space-x-2">
             {Socials.map((social) => (
-                <Image src={social.src}
+              <Image
+                src={social.src}
                 alt={social.name}
                 key={social.name}
-                width={24}
-                height={24}
-                />
+                width={20}
+                height={20}
+                className="cursor-pointer"
+              />
             ))}
+          </div>
         </div>
       </div>
     </div>
